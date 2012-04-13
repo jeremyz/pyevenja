@@ -30,9 +30,9 @@
                 access the head information :
                 - source
                 - destination
-                and access the data information.  
+                and access the data information.
                 WITHOUT HAVING TO DO A VERSIONNING.
-  
+
   *@author Fabian Padilla
   */"""
 
@@ -42,10 +42,10 @@ from fport import Fport
 from fevendata import FevenData
 
 class Fviewer(Fport):
-	"""This class is form debugging purpose """
-	def __init__(self):
-		Fport.__init__(self)		# force constructor
+    """This class is form debugging purpose """
+    def __init__(self):
+        Fport.__init__(self)        # force constructor
 
-	def __str__(self):
-		return "\t"+Fport.__str__(self)+\
-				"Fviewer - (null)\n"
+    def __str__(self):
+        return "\t"+Fport.__str__(self)+\
+                "Fviewer - (null)\n"

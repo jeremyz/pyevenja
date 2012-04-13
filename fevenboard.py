@@ -52,33 +52,33 @@ from globalvars import gvActionFollowDestination
 
 class FevenBoard(FportListHash):
 
-	def __init__(self):
-		FportListHash.__init__(self)	# force contrustor
+    def __init__(self):
+        FportListHash.__init__(self)    # force contrustor
 
-	def __str__(self):
-		return "\t"+FportListHash.__str__(self)+\
-				"FevenBoard - (null)\n"
-	
-	def receive_evenData(self,evenData):
-		"""/** Receive the evenData and apply the action to know what to do with */"""
-		action = evenData.getCurrentDestination().getAction()
+    def __str__(self):
+        return "\t"+FportListHash.__str__(self)+\
+                "FevenBoard - (null)\n"
 
-		if action.equals(gvActionDestination1Data):
-			if evenData.selectNextDestination() != RET_OK:
-				evenData.definePortAction(ACT_ERROR)
-		else:
-			dataPresent = self.listHash.addOrRemove(evenData)
-			if dataPresent <> None:
-				if action.equals(gvActionFollowDestination):
-					provData = dataPresent
-					dataPresent = evenData
-					evenData = provData
-				evenData.setEvenDataB(dataPresent)
-				if evenData.selectNextDestination() != RET_OK:
-					evenData.definePortAction(ACT_ERROR)
-				self.sendEvenData(evenData)
-			else:
-				if action.equals(gvActionWait):
-					print "NOT IMPLEMENTED YET"
-		return RET_OK
-						
+    def receive_evenData(self,evenData):
+        """/** Receive the evenData and apply the action to know what to do with */"""
+        action = evenData.getCurrentDestination().getAction()
+
+        if action.equals(gvActionDestination1Data):
+            if evenData.selectNextDestination() != RET_OK:
+                evenData.definePortAction(ACT_ERROR)
+        else:
+            dataPresent = self.listHash.addOrRemove(evenData)
+            if dataPresent <> None:
+                if action.equals(gvActionFollowDestination):
+                    provData = dataPresent
+                    dataPresent = evenData
+                    evenData = provData
+                evenData.setEvenDataB(dataPresent)
+                if evenData.selectNextDestination() != RET_OK:
+                    evenData.definePortAction(ACT_ERROR)
+                self.sendEvenData(evenData)
+            else:
+                if action.equals(gvActionWait):
+                    print "NOT IMPLEMENTED YET"
+        return RET_OK
+

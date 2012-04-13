@@ -24,7 +24,7 @@
 __all__ = ["MAX_TREELEVEL","START_ELEMENTS","INC_ELEMENTS"]
 
 
-MAX_TREELEVEL         = 8	# not used yet
+MAX_TREELEVEL         = 8    # not used yet
 
 # only used in flisthash.py tests
 START_ELEMENTS          = 100   #/* Start with a list of 100 elements */

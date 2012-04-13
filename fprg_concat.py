@@ -30,24 +30,24 @@ from evenjastrings import ACT_END
 
 class Fdoor_concat(FevenPrg):
 
-	def __init__(self):
-		FevenPrg.__init__(self)		# force construstor
+    def __init__(self):
+        FevenPrg.__init__(self)        # force construstor
 
-	def __str__(self):
-		return "\t"+FevenPrg.__str__(self)+\
-				"Fdoor_concat - (null)\n"
+    def __str__(self):
+        return "\t"+FevenPrg.__str__(self)+\
+                "Fdoor_concat - (null)\n"
 
-	def receive_evenData(self,evenData):
-		evenDataB = evenData.getEvenDataB()
-		
-		str = evenData.getData("TXT")
-		str += evenDataB.getData("TXT")
-		evenData.setData("TXT",str)
-		evenData.resetDestination()
-		evenData.addDestination("printf")
-		self.sendEvenData(evenData)
+    def receive_evenData(self,evenData):
+        evenDataB = evenData.getEvenDataB()
 
-		evenDataB.definePortAction(ACT_END)
-		self.sendEvenData(evenDataB)
-		
-		return RET_OK
+        str = evenData.getData("TXT")
+        str += evenDataB.getData("TXT")
+        evenData.setData("TXT",str)
+        evenData.resetDestination()
+        evenData.addDestination("printf")
+        self.sendEvenData(evenData)
+
+        evenDataB.definePortAction(ACT_END)
+        self.sendEvenData(evenDataB)
+
+        return RET_OK

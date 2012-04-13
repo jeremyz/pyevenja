@@ -34,33 +34,33 @@ from fport import Fport
 from evenjastrings import ACT_ERROR
 
 class FportBkpEvenData(Fport):
-	"""This class is a wrapper arounf Fport class for security purpose"""
+    """This class is a wrapper arounf Fport class for security purpose"""
 
-	def __init__(self):
-		Fport.__init__(self)	# force constructor
-		self.evenDataA = None	#/** Backup of the evenDatas that need to be sends by sendEvenData */
+    def __init__(self):
+        Fport.__init__(self)    # force constructor
+        self.evenDataA = None    #/** Backup of the evenDatas that need to be sends by sendEvenData */
 
-	def __str__(self):
-		return "\t"+Fport.__str__(self)+\
-				"FportBkpEvenData - evenDataA : "+str(self.evenDataA)+"\n"
+    def __str__(self):
+        return "\t"+Fport.__str__(self)+\
+                "FportBkpEvenData - evenDataA : "+str(self.evenDataA)+"\n"
 
-	def justDoIt(self,evenData):
-		"""/** Methods called by Fstarter */"""
-		self.evenDataA = evenData
-		ret = Fport.justDoIt(self,evenData)
-		if self.evenDataA:
-			self.evenDataA.definePortAction(ACT_ERROR)
-			self.sendEvenData(self.evenDataA)
-		return ret
-	
-	def sendEvenData(self,evenData,portDestination = None):
-		"""/** Methods to enable all ports to sends evenDatas to a port */"""
-		if (self.evenDataA == evenData):
-			self.evenDataA = None
-		Fport.sendEvenData(self,evenData,portDestination)
-	
-	def sendEvenDataSys(self,evenData,portDestination = None):
-		"""/** Methods to enable all ports to sends evenDatas to a port */"""
-		if (self.evenDataA == evenData):
-			self.evenDataA = None
-		Fport.sendEvenDataSys(self,evenData,portDestination)
+    def justDoIt(self,evenData):
+        """/** Methods called by Fstarter */"""
+        self.evenDataA = evenData
+        ret = Fport.justDoIt(self,evenData)
+        if self.evenDataA:
+            self.evenDataA.definePortAction(ACT_ERROR)
+            self.sendEvenData(self.evenDataA)
+        return ret
+
+    def sendEvenData(self,evenData,portDestination = None):
+        """/** Methods to enable all ports to sends evenDatas to a port */"""
+        if (self.evenDataA == evenData):
+            self.evenDataA = None
+        Fport.sendEvenData(self,evenData,portDestination)
+
+    def sendEvenDataSys(self,evenData,portDestination = None):
+        """/** Methods to enable all ports to sends evenDatas to a port */"""
+        if (self.evenDataA == evenData):
+            self.evenDataA = None
+        Fport.sendEvenDataSys(self,evenData,portDestination)

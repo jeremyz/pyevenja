@@ -20,7 +20,7 @@
 #
 
 """ doc """
- 
+
 __all__ = ["Fdoor_cout"]
 
 
@@ -30,13 +30,13 @@ from sys import stdout
 
 class Fdoor_cout(FevenDoor):
 
-	def __init__(self):
-		FevenDoor.__init__(self)	# force constructor
-	
-	def __str__(self):
-		return "\t"+FevenDoor.__str__(self)+\
-				"Fdoor_cout - (null)\n"
-		
-	def receive_evenData(self,evenData):
-		stdout.write("%s"%evenData.getData("TXT"))
-		return RET_OK
+    def __init__(self):
+        FevenDoor.__init__(self)    # force constructor
+
+    def __str__(self):
+        return "\t"+FevenDoor.__str__(self)+\
+                "Fdoor_cout - (null)\n"
+
+    def receive_evenData(self,evenData):
+        stdout.write("%s"%evenData.getData("TXT"))
+        return RET_OK

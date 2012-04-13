@@ -30,11 +30,11 @@ RET_KO = -1
 RET_MEMORYSPACE = -10
 
 #// developpement errors
-RET_NOTIMPLEMENTED = -1001			#/* Method not already implmented*/
-RET_NOTIMPLEMENTED_TXT = "NOT IMPLEMENTED"	#/* Text version */
+RET_NOTIMPLEMENTED = -1001            #/* Method not already implmented*/
+RET_NOTIMPLEMENTED_TXT = "NOT IMPLEMENTED"    #/* Text version */
 
 #// Erros which can be generated at start of the application (before the rooms are working)
-RET_NOPARAMS = -2001	#// The parameter is not available
+RET_NOPARAMS = -2001    #// The parameter is not available
 
 #// Returns in normal usage of the evenja and evendoor technology need to be managed by the class
 RET_INTERNAL        = -10000
@@ -54,5 +54,5 @@ RET_NOTEXIST        = RET_TREE - 5  #/* {Next,Prev,Children or Parent} Node not 
 RET_NOTFOUND        = RET_TREE - 6  #/* Nothing found, in the search */
 
 RET_CANNOTSAVE      = RET_TREE - 7  #/* Cannot save the file */
-#RET_		    = ""
+#RET_            = ""
 

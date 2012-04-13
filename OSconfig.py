@@ -20,6 +20,6 @@
 #
 
 """only the Linux version available"""
- 
+
 from OSlinux import *
 

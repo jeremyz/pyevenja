@@ -40,18 +40,18 @@
   */"""
 
 __all__ = ["FportListHash"]
-  
+
 from fport import Fport
 from flisthash import FlistHash
 
 
 class FportListHash(Fport):
-	""" This is a Fport with Flist attribute"""
+    """ This is a Fport with Flist attribute"""
 
-	def __init__(self):
-		Fport.__init__(self)		# force constructor
-		self.listHash = FlistHash()	#/** List of inherited class from FstringHash ( found them faster). */
-	
-	def __str__(self):
-		return "\t"+Fport.__str__(self)+\
-				"FportListHash - list : "+str(self.listHash)+"\n"
+    def __init__(self):
+        Fport.__init__(self)        # force constructor
+        self.listHash = FlistHash()    #/** List of inherited class from FstringHash ( found them faster). */
+
+    def __str__(self):
+        return "\t"+Fport.__str__(self)+\
+                "FportListHash - list : "+str(self.listHash)+"\n"

@@ -74,7 +74,7 @@ ACT_SYS_CONTINUE    = "SYS_CONTINUE"  #/** Continue the work inside the port (af
 ACT_SYS_ADDDEST     = "SYS_ADDDEST"   #/** Add a special destination to an evenDoor */
 ACT_SYS_REMDEST     = "SYS_REMDEST"   #/** Remove a special destination to an evenDoor */
 ACT_SYS_TESTMODE    = "SYS_TESTMODE"  #/** Enable the check of a port with the configuration of them, at runtime */
-                       
+
 #// -------------------------------------------------------------------------
 #/** SOFTWARE ACTIONS.
 #    Standard actions implemented in the evenja kernel.
@@ -131,13 +131,13 @@ ACT_ERROR             = "error"
 
 #/** Format of the wait time when ACT_WAIT is used */
 ACT_WAIT_NOTHING      = ' '                   #/** In fact, don't wait */
-ACT_WAIT_YEAR         = 'y'                   
-ACT_WAIT_MONTH        = 'n'                   
-ACT_WAIT_DAY          = 'd'                   
-ACT_WAIT_HOUR         = 'h'                   
-ACT_WAIT_MINUTE       = 'm'                   
-ACT_WAIT_SECOND       = 's'                   
-ACT_WAIT_MILLISEC     = 'x'                   
+ACT_WAIT_YEAR         = 'y'
+ACT_WAIT_MONTH        = 'n'
+ACT_WAIT_DAY          = 'd'
+ACT_WAIT_HOUR         = 'h'
+ACT_WAIT_MINUTE       = 'm'
+ACT_WAIT_SECOND       = 's'
+ACT_WAIT_MILLISEC     = 'x'
 
 #// -------------------------------------------------------------------------
 #/** Internal Names

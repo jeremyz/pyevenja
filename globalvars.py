@@ -46,22 +46,22 @@ import evenjastrings as ES
 #gvNoValues = None
 
 #def initGlobalVars():
-#	
-#	global gvActionNormal
-#	global gvActionDestination1Data
-#	global gvActionDestination2Data
-#	global gvActionFollowDestination
-#	global gvActionWait
-#	global gvActionAdd
-#	global gvActionUpdate
-#	global gvActionDelete
-#	global gvActionGet
-#	global gvActionFind
-#	global gvActionEnd
-#	global gvActionError
-#	global gvActionSysAddDest
-#	global gvNoValues
-#	
+#
+#    global gvActionNormal
+#    global gvActionDestination1Data
+#    global gvActionDestination2Data
+#    global gvActionFollowDestination
+#    global gvActionWait
+#    global gvActionAdd
+#    global gvActionUpdate
+#    global gvActionDelete
+#    global gvActionGet
+#    global gvActionFind
+#    global gvActionEnd
+#    global gvActionError
+#    global gvActionSysAddDest
+#    global gvNoValues
+#
 gvActionNormal = FstringHash()
 gvActionNormal.setString(ES.ACT_NORMAL)
 
@@ -106,29 +106,29 @@ gvNoValues.setString(ES.TXT_NOVALUES)
 
 
 #if __name__ == '__main__':
-#	
-#	import unittest
-#	D = dir()
-#	L=[	ES.ACT_ADD,\
-#		ES.ACT_DELETE,\
-#		ES.ACT_DESTINATION1DATA,\
-#		ES.ACT_DESTINATION2DATA,\
-#		ES.ACT_END,\
-#		ES.ACT_ERROR,\
-#		ES.ACT_FIND,\
-#		ES.ACT_FOLLOWDESTINATION,\
-#		ES.ACT_GET,\
-#		ES.ACT_NORMAL,\
-#		ES.ACT_SYS_ADDDEST,\
-#		ES.ACT_UPDATE,\
-#		ES.ACT_WAIT,\
-#		ES.TXT_NOVALUES]
-#	
-#	class globalvarsTestCase(unittest.TestCase):
 #
-#		def testInit(self):
-#			initGlobalVars()
-#			for I in D:
-#				if I[:2]=="gv":
-#					self.assertNotEquals(eval(D[D.index(I)]).getString(),D.index(I))
-#	unittest.main()
+#    import unittest
+#    D = dir()
+#    L=[    ES.ACT_ADD,\
+#        ES.ACT_DELETE,\
+#        ES.ACT_DESTINATION1DATA,\
+#        ES.ACT_DESTINATION2DATA,\
+#        ES.ACT_END,\
+#        ES.ACT_ERROR,\
+#        ES.ACT_FIND,\
+#        ES.ACT_FOLLOWDESTINATION,\
+#        ES.ACT_GET,\
+#        ES.ACT_NORMAL,\
+#        ES.ACT_SYS_ADDDEST,\
+#        ES.ACT_UPDATE,\
+#        ES.ACT_WAIT,\
+#        ES.TXT_NOVALUES]
+#
+#    class globalvarsTestCase(unittest.TestCase):
+#
+#        def testInit(self):
+#            initGlobalVars()
+#            for I in D:
+#                if I[:2]=="gv":
+#                    self.assertNotEquals(eval(D[D.index(I)]).getString(),D.index(I))
+#    unittest.main()

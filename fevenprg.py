@@ -26,7 +26,7 @@
   description : Must contain only the behavior to modify datas and "if" concerning the
                 modification of datas. Do not implement in a evenPrg "if" about end user
                 functionnalities. See the withepaper.pdf at www.evenja.org.
-  
+
   *@author Fabian Padilla
   */"""
 
@@ -38,36 +38,36 @@ from fportbkpevendata import FportBkpEvenData
 from evenjastrings import ACT_ERROR
 
 class FevenPrg(FportBkpEvenData):
-	""" This class is the interface for all evenPrg"""
+    """ This class is the interface for all evenPrg"""
 
-	def __init__(self):
-		FportBkpEvenData.__init__(self)	# force constructor
-		self.evenDataB = None		#/** Backup of the evenDatas that need to be sends by sendEvenData */
-	
-	def __str__(self):
-		return "\t"+FportBkpEvenData.__str__(self)+\
-				"FevenPrg - evenDataB : "+str(self.evenDataB)+"\n"
-	
-	def justDoIt(self,evenData):
-		"""/** Methods called by Fstarter */"""
-		self.evenDataB = evenData.getEvenDataB()
-		if self.evenDataB <> None:
-			evenData.setEvenDataB(self.evenDataB)
-		ret = FportBkpEvenData.justDoIt(self,evenData)
-		if self.evenDataB <> None:
-			self.evenDataB.definePortAction(ACT_ERROR)
-			self.sendEvenData(self.evenDataB)
-		return ret
-	
-	def sendEvenData(self,evenData):
-		"""/** Methods to enable all ports to sends evenDatas to a port */"""
-		if self.evenDataB == evenData:
-			self.evenDataB = None
-		FportBkpEvenData.sendEvenData(self,evenData)
-	
-	def sendEvenDataSys(self,evenData):
-		"""/** Methods to enable all ports to sends evenDatas to a port */"""
-		if self.evenDataB == evenData:
-			self.evenDataB = None
-		FportBkpEvenData.sendEvenDataSys(self,evenData)
-	
+    def __init__(self):
+        FportBkpEvenData.__init__(self)    # force constructor
+        self.evenDataB = None        #/** Backup of the evenDatas that need to be sends by sendEvenData */
+
+    def __str__(self):
+        return "\t"+FportBkpEvenData.__str__(self)+\
+                "FevenPrg - evenDataB : "+str(self.evenDataB)+"\n"
+
+    def justDoIt(self,evenData):
+        """/** Methods called by Fstarter */"""
+        self.evenDataB = evenData.getEvenDataB()
+        if self.evenDataB <> None:
+            evenData.setEvenDataB(self.evenDataB)
+        ret = FportBkpEvenData.justDoIt(self,evenData)
+        if self.evenDataB <> None:
+            self.evenDataB.definePortAction(ACT_ERROR)
+            self.sendEvenData(self.evenDataB)
+        return ret
+
+    def sendEvenData(self,evenData):
+        """/** Methods to enable all ports to sends evenDatas to a port */"""
+        if self.evenDataB == evenData:
+            self.evenDataB = None
+        FportBkpEvenData.sendEvenData(self,evenData)
+
+    def sendEvenDataSys(self,evenData):
+        """/** Methods to enable all ports to sends evenDatas to a port */"""
+        if self.evenDataB == evenData:
+            self.evenDataB = None
+        FportBkpEvenData.sendEvenDataSys(self,evenData)
+

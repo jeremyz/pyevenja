@@ -22,7 +22,7 @@
 """/** Inherited from Fport to add a listHash.
 
   function : maintain a list in
-             FevenDoor : 
+             FevenDoor :
 
   description : work as Fport.
 
@@ -36,12 +36,12 @@ from flist import Flist
 
 
 class FportList(Fport):
-	"""This class is nothing but a fport with a flist as atribute"""
+    """This class is nothing but a fport with a flist as atribute"""
 
-	def __init__(self):
-		Fport.__init__(self)	# force constructor
-		self.list = Flist	#/** List of inherited class from FstringHash ( found them faster). */
+    def __init__(self):
+        Fport.__init__(self)    # force constructor
+        self.list = Flist    #/** List of inherited class from FstringHash ( found them faster). */
 
-	def __str__(self):
-		return "\t"+Fport.__str__(self)+\
-				"FportList - list : "+str(self.list)+"\n"
+    def __str__(self):
+        return "\t"+Fport.__str__(self)+\
+                "FportList - list : "+str(self.list)+"\n"
