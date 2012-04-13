@@ -1,0 +1,6 @@
+#! /bin/sh
+
+EVENJA_PATH=${EVENJA_PATH:='.'}
+START_FILE=pyevenja.py
+
+python -O $EVENJA_PATH/$START_FILE $*
